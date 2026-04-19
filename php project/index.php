@@ -133,11 +133,50 @@ addFive($num);
 echo " <br> $num";
 ///////////////////////////////////////////////////
 //Date and Time function 
+// echo"<br>";
+// echo "today ".date("Y-m-d")."<br>";
+// echo "today ".date("Y.m.d")."<br>";
+// echo "today ".date("Y/m/d")."<br>";
+// echo "today ".date("Y");
+// echo "<br> 2019 -".date("Y");
+//////////////////////////////////////////
+//Time 
+echo "<br>the time is " . date("h:i:s a");
+echo "";
+////////////////////////////////////////////
+//Time Zone
+echo "<br>";
+date_default_timezone_set("America/New_York");
+echo "The Time is " . date("h:i:s a");
+//////////////////////////////////////////////
+//Function Example
+echo "<br>";
+function getAverage($x, $y, $z)
+{
+    return ($x + $y + $z) / 3.0;
+}
+echo getAverage(90, 80, 70) . "<br>";
+echo getAverage(70, 80, 70) . "<br>";
+function checkEvenOdd($x){
+    if ($x %2== 0) {
+        echo"Even  ";
+    }
+    else {
+        echo "Odd";
+    }
+}
+checkEvenOdd(9);
 echo"<br>";
-echo "today ".date("Y-m-d")."<br>";
-echo "today ".date("Y.m.d")."<br>";
-echo "today ".date("Y/m/d")."<br>";
-echo "today ".date("Y");
+checkEvenOdd(4);
+function sumEven(){
+    $sum=0;
+    for ($i = 0; $i < 100; $i+=2) {
+            $sum+=$i;
+    }
+    echo $sum;
+}
+sumEven();
+
 
 
 
