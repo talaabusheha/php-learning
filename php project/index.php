@@ -176,6 +176,14 @@ function sumEven(){
     echo $sum;
 }
 sumEven();
+function MaxNum($x,$y){
+    if ($x>$y){
+        return $x;
+    }
+    else return $y;
+}
+echo"<br>";
+echo maxNum(4,8);
 
 
 
