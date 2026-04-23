@@ -184,6 +184,11 @@ function MaxNum($x,$y){
 }
 echo"<br>";
 echo maxNum(4,8);
+echo "<br>";
+//////////////////////////////////////////////////
+// Arrays
+$cars =array("Volvo", "BMW", "Toyota");
+echo " I like ". $cars[0] .",". $cars[1] . " and ". $cars[2] . ".";
 
 
 
