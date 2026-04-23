@@ -157,38 +157,74 @@ function getAverage($x, $y, $z)
 }
 echo getAverage(90, 80, 70) . "<br>";
 echo getAverage(70, 80, 70) . "<br>";
-function checkEvenOdd($x){
-    if ($x %2== 0) {
-        echo"Even  ";
-    }
-    else {
+function checkEvenOdd($x)
+{
+    if ($x % 2 == 0) {
+        echo "Even  ";
+    } else {
         echo "Odd";
     }
 }
 checkEvenOdd(9);
-echo"<br>";
+echo "<br>";
 checkEvenOdd(4);
-function sumEven(){
-    $sum=0;
-    for ($i = 0; $i < 100; $i+=2) {
-            $sum+=$i;
+function sumEven()
+{
+    $sum = 0;
+    for ($i = 0; $i < 100; $i += 2) {
+        $sum += $i;
     }
     echo $sum;
 }
 sumEven();
-function MaxNum($x,$y){
-    if ($x>$y){
+function MaxNum($x, $y)
+{
+    if ($x > $y) {
         return $x;
-    }
-    else return $y;
+    } else
+        return $y;
 }
-echo"<br>";
-echo maxNum(4,8);
+echo "<br>";
+echo maxNum(4, 8);
 echo "<br>";
 //////////////////////////////////////////////////
 // Arrays
-$cars =array("Volvo", "BMW", "Toyota");
-echo " I like ". $cars[0] .",". $cars[1] . " and ". $cars[2] . ".";
+$cars = array("Volvo", "BMW", "Toyota");
+echo " I like " . $cars[0] . "," . $cars[1] . " and " . $cars[2] . ".";
+echo "<br>";
+
+
+echo "<br>";
+for($i=0;$i< count($cars) ;$i++){
+    echo $cars[$i] . "<br>";
+}
+foreach($cars as $val){
+    echo $val ."<br>";
+
+}//////////////////////////////////////////////
+//Associative Arrays
+$age= array("tala" => 21, "salma" => 19, "abood" => 16);
+foreach($age as $num => $val){
+    echo "key =". $num ." , value" .$val . "<br>";
+}
+//////////////////////////////////////////////////
+//Multidimensional Arrays
+echo "<br>";
+$marks = array(
+    array("tala", 90, 80, 70),
+    array("salma", 80, 70, 60),
+    array("abood", 70, 60, 50)
+);
+echo "<br>";
+echo $marks[0][0] . " : " . $marks[0][1] . "," . $marks[0][2] . "," . $marks[0][3] . "<br>";
+for($i= 0;$i< count($marks) ;$i++){//row
+    echo $marks[$i][0] ;
+    for($j= 0;$j< count($marks) ;$j++){//col
+        echo $marks[$i][1] ;
+    }
+}
+
+
 
 
 
