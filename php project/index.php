@@ -195,17 +195,17 @@ echo "<br>";
 
 
 echo "<br>";
-for($i=0;$i< count($cars) ;$i++){
+for ($i = 0; $i < count($cars); $i++) {
     echo $cars[$i] . "<br>";
 }
-foreach($cars as $val){
-    echo $val ."<br>";
+foreach ($cars as $val) {
+    echo $val . "<br>";
 
 }//////////////////////////////////////////////
 //Associative Arrays
-$age= array("tala" => 21, "salma" => 19, "abood" => 16);
-foreach($age as $num => $val){
-    echo "key =". $num ." , value" .$val . "<br>";
+$age = array("tala" => 21, "salma" => 19, "abood" => 55);
+foreach ($age as $num => $val) {
+    echo "key =" . $num . " , value" . $val . "<br>";
 }
 //////////////////////////////////////////////////
 //Multidimensional Arrays
@@ -217,12 +217,111 @@ $marks = array(
 );
 echo "<br>";
 echo $marks[0][0] . " : " . $marks[0][1] . "," . $marks[0][2] . "," . $marks[0][3] . "<br>";
-for($i= 0;$i< count($marks) ;$i++){//row
-    echo $marks[$i][0] ;
-    for($j= 0;$j< count($marks) ;$j++){//col
-        echo $marks[$i][1] ;
+for ($i = 0; $i < count($marks); $i++) {//row
+    echo $marks[$i][0];
+    for ($j = 0; $j < count($marks); $j++) {//col
+        echo $marks[$i][1];
     }
 }
+
+
+echo "<br>";
+/////////////////////////////////
+//Functions for Arrays
+//Sort function
+sort($cars);
+for ($i = 0; $i < count($cars); $i++) {
+    echo $cars[$i] . "<br>";
+}
+
+$numbers = array(5, 6, 58, 9, 2, 10);
+sort($numbers);
+for ($i = 0; $i < count($numbers); $i++) {
+    echo $numbers[$i] . "<br>";
+}
+//Rsort() => ترتيب تنازلي 
+rsort($cars);
+for ($i = 0; $i < count($cars); $i++) {
+    echo $cars[$i] . "<br>";
+}
+// asort() =>associative array();
+asort($age);
+foreach ($age as $key => $value) {
+    echo "key: " . $key . " ,Value= " . $value;
+    echo "<br>";
+}
+//ksort() =>Key sort:)
+ksort($age);
+foreach ($age as $key => $value) {
+    echo "key: " . $key . " ,Value= " . $value;
+    echo "<br>";
+}
+echo "<pre>";
+print_r($cars);
+echo "</pre>";
+/////////////////////////////////////
+//Array function - add 
+array_push($cars, "Marcides", "firari");
+print_r($cars);
+echo "<br>";
+array_unshift($cars, "Marcides");
+print_r($cars);
+///////////////////////////////////////////////////
+// Array function Search :)
+//in_array
+echo "<br>";
+$number1 = array(1, 2, "10");
+var_dump(in_array(10, $number1));
+echo "<br>";
+var_dump(in_array(10, $number1, true));
+////////////////////////////////////////////
+//delete function  
+$arrf = array(1, 2, 3, 5);
+$lastValue = array_pop($arrf);
+echo $lastValue;
+echo "<br>";
+$langs=array(
+    "php"=>"server side",
+    "js"=>"client side",
+    "python"=>"both"
+);
+$firstDelete=array_shift($langs);
+echo $firstDelete; 
+////////////////////////////////////////////
+//unset function
+echo "<br>";
+unset($arrf[2]);
+print_r($arrf);
+echo "<br>";
+unset($langs["php"]);
+print_r($langs);
+//////////////////////////////////////////////
+// explode() => string to array
+echo "<br>";
+$str = "Hello world. It's a beautiful day.";
+print_r(explode(" ", $str));
+echo "<br>";
+$str1 ='one,two,tree,four';
+//zero limit 
+print_r(explode(',', $str1,0));
+//positive limit
+echo "<br>";
+print_r(explode(',', $str1,2));
+//negative limit
+echo "<br>";
+print_r(explode(',', $str1,-1));
+/////////////////////////////////////////////
+//implode() => array to string
+echo "<br>";
+$colors = array("red", "green", "blue");
+echo implode(",", $colors);
+///////////////////////////////////////////
+    echo "<br>";
+    $a1=array_fill(3,4,"blue");
+    print_r($a1);
+
+    
+
 
 
 
